@@ -29,10 +29,10 @@ jobs:
           ./dependency-check/bin/dependency-check.sh --project JavaSecurityCheck --scan ./ --format HTML --out report --disableAssembly -v
 
       - name: Debug
-        run: dir report /s
+        run: ls -la report
         
       - name: Upload Report
         uses: actions/upload-artifact@v4
         with:
           name: security-report
-          path: report.html
+          path: report/dependency-check-report.html
